@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Tipoasuntos list</h1>
+    <h1>Lsta tipo de asuntos</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Idtipoasunto</th>
+                <th>Id tipoasunto</th>
                 <th>Asunto</th>
-                <th>Estadoasunto</th>
-                <th>Actions</th>
+                <th>Estado asunto</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('tipoasuntos_show', { 'id': tipoasunto.idTipoasunto }) }}">show</a>
+                            <a href="{{ path('tipoasuntos_show', { 'id': tipoasunto.idTipoasunto }) }}">Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('tipoasuntos_edit', { 'id': tipoasunto.idTipoasunto }) }}">edit</a>
+                            <a href="{{ path('tipoasuntos_edit', { 'id': tipoasunto.idTipoasunto }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('tipoasuntos_new') }}">Create a new entry</a>
+            <a href="{{ path('tipoasuntos_new') }}">Crear nuevo tipo de asunto</a>
         </li>
     </ul>
 {% endblock %}

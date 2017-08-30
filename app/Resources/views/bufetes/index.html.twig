@@ -1,19 +1,19 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Bufetes list</h1>
+    <h1>Lista Bufetes</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Idbufete</th>
-                <th>Nombrebufete</th>
-                <th>Telefono1bufete</th>
+                <th>Id bufete</th>
+                <th>Nombre bufete</th>
+                <th>Telefono1 </th>
                 <th>Telefono2</th>
-                <th>Emailbufete</th>
-                <th>Direccionbufete</th>
-                <th>Estadobufete</th>
-                <th>Actions</th>
+                <th>Email bufete</th>
+                <th>Direccion bufete</th>
+                <th>Estado bufete</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -29,10 +29,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}">show</a>
+                            <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}">Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}">edit</a>
+                            <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -43,7 +43,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('bufetes_new') }}">Create a new entry</a>
+            <a href="{{ path('bufetes_new') }}">Crear nuevo Bufete</a>
         </li>
     </ul>
 {% endblock %}

@@ -10,11 +10,11 @@
                 <td>{{ bufete.idBufete }}</td>
             </tr>
             <tr>
-                <th>Nombrebufete</th>
+                <th>Nombre bufete</th>
                 <td>{{ bufete.nombreBufete }}</td>
             </tr>
             <tr>
-                <th>Telefono1bufete</th>
+                <th>Telefono1 </th>
                 <td>{{ bufete.telefono1Bufete }}</td>
             </tr>
             <tr>
@@ -22,15 +22,15 @@
                 <td>{{ bufete.telefono2 }}</td>
             </tr>
             <tr>
-                <th>Emailbufete</th>
+                <th>Email bufete</th>
                 <td>{{ bufete.emailBufete }}</td>
             </tr>
             <tr>
-                <th>Direccionbufete</th>
+                <th>Direccion bufete</th>
                 <td>{{ bufete.direccionBufete }}</td>
             </tr>
             <tr>
-                <th>Estadobufete</th>
+                <th>Estado bufete</th>
                 <td>{{ bufete.estadoBufete }}</td>
             </tr>
         </tbody>
@@ -38,10 +38,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('bufetes_index') }}">Back to the list</a>
+            <a href="{{ path('bufetes_index') }}">Regresar a la lista</a>
         </li>
         <li>
-            <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}">Edit</a>
+            <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

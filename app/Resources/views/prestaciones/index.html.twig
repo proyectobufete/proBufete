@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Prestaciones list</h1>
+    <h1>Lista Prestaciones</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Idprestaciones</th>
+                <th>Id prestaciones</th>
                 <th>Prestacion</th>
-                <th>Estadoprestacion</th>
-                <th>Actions</th>
+                <th>Estado prestacion</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('prestaciones_show', { 'id': prestacione.idPrestaciones }) }}">show</a>
+                            <a href="{{ path('prestaciones_show', { 'id': prestacione.idPrestaciones }) }}">Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('prestaciones_edit', { 'id': prestacione.idPrestaciones }) }}">edit</a>
+                            <a href="{{ path('prestaciones_edit', { 'id': prestacione.idPrestaciones }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('prestaciones_new') }}">Create a new entry</a>
+            <a href="{{ path('prestaciones_new') }}">Crear nueva prestacion</a>
         </li>
     </ul>
 {% endblock %}

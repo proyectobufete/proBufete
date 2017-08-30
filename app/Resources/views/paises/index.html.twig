@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Paises list</h1>
+    <h1>Listar Paises</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Idpais</th>
+                <th>Id pais</th>
                 <th>Pais</th>
                 <th>Estadopais</th>
-                <th>Actions</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -21,10 +21,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('paises_show', { 'id': paise.idPais }) }}">show</a>
+                            <a href="{{ path('paises_show', { 'id': paise.idPais }) }}">Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('paises_edit', { 'id': paise.idPais }) }}">edit</a>
+                            <a href="{{ path('paises_edit', { 'id': paise.idPais }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +35,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('paises_new') }}">Create a new entry</a>
+            <a href="{{ path('paises_new') }}">Crear nuevo pais</a>
         </li>
     </ul>
 {% endblock %}

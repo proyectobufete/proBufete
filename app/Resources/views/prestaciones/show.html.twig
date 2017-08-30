@@ -6,7 +6,7 @@
     <table>
         <tbody>
             <tr>
-                <th>Idprestaciones</th>
+                <th>Id prestaciones</th>
                 <td>{{ prestacione.idPrestaciones }}</td>
             </tr>
             <tr>
@@ -14,7 +14,7 @@
                 <td>{{ prestacione.prestacion }}</td>
             </tr>
             <tr>
-                <th>Estadoprestacion</th>
+                <th>Estado prestacion</th>
                 <td>{% if prestacione.estadoPrestacion %}Yes{% else %}No{% endif %}</td>
             </tr>
         </tbody>
@@ -22,10 +22,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('prestaciones_index') }}">Back to the list</a>
+            <a href="{{ path('prestaciones_index') }}">Regresar a la lista</a>
         </li>
         <li>
-            <a href="{{ path('prestaciones_edit', { 'id': prestacione.idPrestaciones }) }}">Edit</a>
+            <a href="{{ path('prestaciones_edit', { 'id': prestacione.idPrestaciones }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

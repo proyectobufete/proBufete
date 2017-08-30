@@ -6,7 +6,7 @@
     <table>
         <tbody>
             <tr>
-                <th>Idtribunal</th>
+                <th>Id tribunal</th>
                 <td>{{ tribunale.idTribunal }}</td>
             </tr>
             <tr>
@@ -14,7 +14,7 @@
                 <td>{{ tribunale.tribunal }}</td>
             </tr>
             <tr>
-                <th>Estadotribunal</th>
+                <th>Estado tribunal</th>
                 <td>{% if tribunale.estadoTribunal %}Yes{% else %}No{% endif %}</td>
             </tr>
         </tbody>
@@ -22,10 +22,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('tribunales_index') }}">Back to the list</a>
+            <a href="{{ path('tribunales_index') }}">Regresar a la lista</a>
         </li>
         <li>
-            <a href="{{ path('tribunales_edit', { 'id': tribunale.idTribunal }) }}">Edit</a>
+            <a href="{{ path('tribunales_edit', { 'id': tribunale.idTribunal }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

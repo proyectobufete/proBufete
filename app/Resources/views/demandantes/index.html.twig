@@ -1,21 +1,21 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Demandantes list</h1>
+    <h1>Lista Demandantes</h1>
 
     <table>
         <thead>
             <tr>
-                <th>Iddemandante</th>
-                <th>Nombredemandante</th>
-                <th>Edaddemandante</th>
-                <th>Dpidemandante</th>
-                <th>Cedulademandante</th>
-                <th>Direcciondemandante</th>
-                <th>Residenciademandante</th>
-                <th>Dirtrabajodemandante</th>
-                <th>Telefonodemandante</th>
-                <th>Actions</th>
+                <th>Id demandante</th>
+                <th>Nombre demandante</th>
+                <th>Edad demandante</th>
+                <th>Dpi demandante</th>
+                <th>Cedula demandante</th>
+                <th>Direccion demandante</th>
+                <th>Residencia demandante</th>
+                <th>Direccion de trabajo </th>
+                <th>Telefono demandante</th>
+                <th>Acciones</th>
             </tr>
         </thead>
         <tbody>
@@ -33,10 +33,10 @@
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">show</a>
+                            <a href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">Ver</a>
                         </li>
                         <li>
-                            <a href="{{ path('demandantes_edit', { 'id': demandante.idDemandante }) }}">edit</a>
+                            <a href="{{ path('demandantes_edit', { 'id': demandante.idDemandante }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -47,7 +47,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('demandantes_new') }}">Create a new entry</a>
+            <a href="{{ path('demandantes_new') }}">Crear nuevo demandante</a>
         </li>
     </ul>
 {% endblock %}
