@@ -21,3 +21,7 @@ Ciudades:
 EstadosCiviles:
     resource: "@BufeteBundle/Resources/config/routing/estadosciviles.yml"
     prefix:     /estadosciviles
+
+Trabajos:
+    resource: "@BufeteBundle/Resources/config/routing/trabajos.yml"
+    prefix:     /trabajos
