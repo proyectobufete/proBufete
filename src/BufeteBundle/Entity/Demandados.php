@@ -144,6 +144,11 @@ class Demandados
         return $this->telefonoDemandado;
     }
 
+    public function __toString()
+ {
+   return $this->Demandado;
+ }
+
     /**
      * Set estadoDemandado
      *
@@ -168,4 +173,3 @@ class Demandados
         return $this->estadoDemandado;
     }
 }
-

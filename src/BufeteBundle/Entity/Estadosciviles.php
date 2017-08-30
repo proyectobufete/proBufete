@@ -71,6 +71,12 @@ class Estadosciviles
         return $this;
     }
 
+    public function __toString()
+     {
+       return $this->estadocivil;
+     }
+
+
     /**
      * Get estadoEstadocivil
      *
@@ -81,4 +87,3 @@ class Estadosciviles
         return $this->estadoEstadocivil;
     }
 }
-
