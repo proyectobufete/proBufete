@@ -25,3 +25,7 @@ EstadosCiviles:
 Trabajos:
     resource: "@BufeteBundle/Resources/config/routing/trabajos.yml"
     prefix:     /trabajos
+
+Demandados:
+    resource: "@BufeteBundle/Resources/config/routing/demandados.yml"
+    prefix:     /demandados
