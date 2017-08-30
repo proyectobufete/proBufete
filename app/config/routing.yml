@@ -9,3 +9,31 @@ app:
 Paises:
     resource: "@BufeteBundle/Resources/config/routing/paises.yml"
     prefix:     /paises
+
+Prestaciones:
+    resource: "@BufeteBundle/Resources/config/routing/prestaciones.yml"
+    prefix:     /prestaciones
+
+Pretenciones:
+    resource: "@BufeteBundle/Resources/config/routing/pretenciones.yml"
+    prefix:     /pretenciones
+
+Tribunales:
+    resource: "@BufeteBundle/Resources/config/routing/tribunales.yml"
+    prefix:     /tribunales
+
+Tipoasuntos:
+    resource: "@BufeteBundle/Resources/config/routing/tipoasuntos.yml"
+    prefix:     /tipoasuntos
+
+Tipocaso:
+    resource: "@BufeteBundle/Resources/config/routing/tipocaso.yml"
+    prefix:     /tipocaso
+
+Bufetes:
+    resource: "@BufeteBundle/Resources/config/routing/bufetes.yml"
+    prefix:     /bufetes
+
+Demandantes:
+    resource: "@BufeteBundle/Resources/config/routing/demandantes.yml"
+    prefix:     /demandantes

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Prestaciones list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idprestaciones</th>
+                <th>Prestacion</th>
+                <th>Estadoprestacion</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for prestacione in prestaciones %}
+            <tr>
+                <td><a href="{{ path('prestaciones_show', { 'id': prestacione.idPrestaciones }) }}">{{ prestacione.idPrestaciones }}</a></td>
+                <td>{{ prestacione.prestacion }}</td>
+                <td>{% if prestacione.estadoPrestacion %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('prestaciones_show', { 'id': prestacione.idPrestaciones }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('prestaciones_edit', { 'id': prestacione.idPrestaciones }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('prestaciones_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

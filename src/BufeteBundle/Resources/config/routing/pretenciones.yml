@@ -1,0 +1,24 @@
+pretenciones_index:
+    path:     /
+    defaults: { _controller: "BufeteBundle:Pretenciones:index" }
+    methods:  GET
+
+pretenciones_show:
+    path:     /{id}/show
+    defaults: { _controller: "BufeteBundle:Pretenciones:show" }
+    methods:  GET
+
+pretenciones_new:
+    path:     /new
+    defaults: { _controller: "BufeteBundle:Pretenciones:new" }
+    methods:  [GET, POST]
+
+pretenciones_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BufeteBundle:Pretenciones:edit" }
+    methods:  [GET, POST]
+
+pretenciones_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BufeteBundle:Pretenciones:delete" }
+    methods:  DELETE

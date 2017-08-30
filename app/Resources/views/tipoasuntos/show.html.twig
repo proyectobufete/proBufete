@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tipoasuntos</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idtipoasunto</th>
+                <td>{{ tipoasunto.idTipoasunto }}</td>
+            </tr>
+            <tr>
+                <th>Asunto</th>
+                <td>{{ tipoasunto.asunto }}</td>
+            </tr>
+            <tr>
+                <th>Estadoasunto</th>
+                <td>{% if tipoasunto.estadoAsunto %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoasuntos_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('tipoasuntos_edit', { 'id': tipoasunto.idTipoasunto }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

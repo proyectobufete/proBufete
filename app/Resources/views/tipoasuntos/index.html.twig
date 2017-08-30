@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tipoasuntos list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idtipoasunto</th>
+                <th>Asunto</th>
+                <th>Estadoasunto</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipoasunto in tipoasuntos %}
+            <tr>
+                <td><a href="{{ path('tipoasuntos_show', { 'id': tipoasunto.idTipoasunto }) }}">{{ tipoasunto.idTipoasunto }}</a></td>
+                <td>{{ tipoasunto.asunto }}</td>
+                <td>{% if tipoasunto.estadoAsunto %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tipoasuntos_show', { 'id': tipoasunto.idTipoasunto }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tipoasuntos_edit', { 'id': tipoasunto.idTipoasunto }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoasuntos_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

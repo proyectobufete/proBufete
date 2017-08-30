@@ -5,3 +5,31 @@ bufete_paises:
 bufete_homepage:
     path:     /
     defaults: { _controller: BufeteBundle:Default:index }
+
+bufete_prestaciones:
+        resource: "@BufeteBundle/Resources/config/routing/prestaciones.yml"
+        prefix:   /prestaciones
+
+bufete_pretenciones:
+        resource: "@BufeteBundle/Resources/config/routing/pretenciones.yml"
+        prefix:   /pretenciones
+
+bufete_tribunales:
+        resource: "@BufeteBundle/Resources/config/routing/tribunales.yml"
+        prefix:   /tribunales
+
+bufete_tipoasuntos:
+        resource: "@BufeteBundle/Resources/config/routing/tipoasuntos.yml"
+        prefix:   /tipoasuntos
+
+bufete_tipocaso:
+        resource: "@BufeteBundle/Resources/config/routing/tipocaso.yml"
+        prefix:   /tipocaso
+
+bufete_bufetes:
+        resource: "@BufeteBundle/Resources/config/routing/bufetes.yml"
+        prefix:   /bufetes
+
+bufete_demandantes:
+        resource: "@BufeteBundle/Resources/config/routing/demandantes.yml"
+        prefix:   /demandantes

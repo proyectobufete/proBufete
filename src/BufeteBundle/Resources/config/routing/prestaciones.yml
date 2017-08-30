@@ -1,0 +1,24 @@
+prestaciones_index:
+    path:     /
+    defaults: { _controller: "BufeteBundle:Prestaciones:index" }
+    methods:  GET
+
+prestaciones_show:
+    path:     /{id}/show
+    defaults: { _controller: "BufeteBundle:Prestaciones:show" }
+    methods:  GET
+
+prestaciones_new:
+    path:     /new
+    defaults: { _controller: "BufeteBundle:Prestaciones:new" }
+    methods:  [GET, POST]
+
+prestaciones_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BufeteBundle:Prestaciones:edit" }
+    methods:  [GET, POST]
+
+prestaciones_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BufeteBundle:Prestaciones:delete" }
+    methods:  DELETE
