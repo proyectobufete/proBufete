@@ -4,44 +4,44 @@
     <h1>Demandados</h1>
 
     <table>
-        <tbody>
-            <tr>
-                <th>Iddemandado</th>
-                <td>{{ demandado.idDemandado }}</td>
-            </tr>
-            <tr>
-                <th>Nombredemandado</th>
-                <td>{{ demandado.nombreDemandado }}</td>
-            </tr>
-            <tr>
-                <th>Direcciondemandado</th>
-                <td>{{ demandado.direccionDemandado }}</td>
-            </tr>
-            <tr>
-                <th>Dirnotificaciondemandado</th>
-                <td>{{ demandado.dirnotificacionDemandado }}</td>
-            </tr>
-            <tr>
-                <th>Telefonodemandado</th>
-                <td>{{ demandado.telefonoDemandado }}</td>
-            </tr>
-            <tr>
-                <th>Estadodemandado</th>
-                <td>{% if demandado.estadoDemandado %}Yes{% else %}No{% endif %}</td>
-            </tr>
-        </tbody>
+      <tbody>
+          <tr>
+              <th>Id demandado</th>
+              <td>{{ demandado.idDemandado }}</td>
+          </tr>
+          <tr>
+              <th>Nombre demandado</th>
+              <td>{{ demandado.nombreDemandado }}</td>
+          </tr>
+          <tr>
+              <th>Direccion demandado</th>
+              <td>{{ demandado.direccionDemandado }}</td>
+          </tr>
+          <tr>
+              <th>Dir notificacion demandado</th>
+              <td>{{ demandado.dirnotificacionDemandado }}</td>
+          </tr>
+          <tr>
+              <th>Telefono demandado</th>
+              <td>{{ demandado.telefonoDemandado }}</td>
+          </tr>
+          <tr>
+              <th>Estado demandado</th>
+              <td>{% if demandado.estadoDemandado %}Activo{% else %}No{% endif %}</td>
+          </tr>
+      </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('demandados_index') }}">Back to the list</a>
+            <a href="{{ path('demandados_index') }}">Regresar al Listado</a>
         </li>
         <li>
-            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">Edit</a>
+            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="eliminar">
             {{ form_end(delete_form) }}
         </li>
     </ul>

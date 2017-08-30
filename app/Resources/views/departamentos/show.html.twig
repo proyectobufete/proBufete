@@ -4,32 +4,36 @@
     <h1>Departamentos</h1>
 
     <table>
-        <tbody>
-            <tr>
-                <th>Iddepartamento</th>
-                <td>{{ departamento.idDepartamento }}</td>
-            </tr>
-            <tr>
-                <th>Postaldepartamento</th>
+      <tbody>
+          <tr>
+              <th>Id departamento</th>
+              <td>{{ departamento.idDepartamento }}</td>
+          </tr>
+          <tr>
+                <th>Codigo Postal departamento</th>
                 <td>{{ departamento.postalDepartamento }}</td>
-            </tr>
-            <tr>
-                <th>Departamento</th>
-                <td>{{ departamento.departamento }}</td>
-            </tr>
-        </tbody>
+          </tr>
+          <tr>
+              <th>Departamento</th>
+              <td>{{ departamento.departamento }}</td>
+          </tr>
+          <tr>
+              <th>pais</th>
+              <td>{{ departamento.idPais.pais }}</td>
+          </tr>
+      </tbody>
     </table>
 
     <ul>
-        <li>
-            <a href="{{ path('departamentos_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('departamentos_edit', { 'id': departamento.idDepartamento }) }}">Edit</a>
-        </li>
+      <li>
+          <a href="{{ path('departamentos_index') }}">Regresar al Listado</a>
+      </li>
+      <li>
+          <a href="{{ path('departamentos_edit', { 'id': departamento.idDepartamento }) }}">Editar</a>
+      </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Eliminar">
             {{ form_end(delete_form) }}
         </li>
     </ul>
