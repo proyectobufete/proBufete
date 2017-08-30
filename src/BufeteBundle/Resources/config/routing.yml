@@ -9,3 +9,7 @@ bufete_homepage:
 bufete_departamentos:
         resource: "@BufeteBundle/Resources/config/routing/departamentos.yml"
         prefix:   /departamentos
+
+bufete_ciudad:
+        resource: "@BufeteBundle/Resources/config/routing/ciudad.yml"
+        prefix:   /ciudad

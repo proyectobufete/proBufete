@@ -13,3 +13,7 @@ Paises:
 Departamentos:
     resource: "@BufeteBundle/Resources/config/routing/departamentos.yml"
     prefix:     /departamentos
+
+Ciudades:
+    resource: "@BufeteBundle/Resources/config/routing/ciudad.yml"
+    prefix:     /ciudad
