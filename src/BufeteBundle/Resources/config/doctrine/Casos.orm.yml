@@ -1,0 +1,137 @@
+BufeteBundle\Entity\Casos:
+    type: entity
+    table: casos
+    indexes:
+        IX_Relationship14:
+            columns:
+                - Id_TipoAsunto
+        IX_Relationship15:
+            columns:
+                - Id_Demandante
+        IX_Relationship16:
+            columns:
+                - Id_Demandado
+        IX_Relationship17:
+            columns:
+                - Id_Estudiante
+        IX_Relationship18:
+            columns:
+                - Id_Tribunal
+        IX_Relationship19:
+            columns:
+                - Id_Persona
+        IX_Relationship24:
+            columns:
+                - Id_Tipo
+    id:
+        idCaso:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Caso
+            generator:
+                strategy: IDENTITY
+    fields:
+        noCaso:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: No_Caso
+        fechaCaso:
+            type: datetime
+            nullable: false
+            column: Fecha_Caso
+        pruebasCaso:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: Pruebas_Caso
+        asignatarioCaso:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Asignatario_Caso
+        estadoCaso:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: Estado_Caso
+    manyToOne:
+        idTipoasunto:
+            targetEntity: Tipoasuntos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_TipoAsunto:
+                    referencedColumnName: Id_TipoAsunto
+            orphanRemoval: false
+        idDemandante:
+            targetEntity: Demandantes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Demandante:
+                    referencedColumnName: Id_Demandante
+            orphanRemoval: false
+        idDemandado:
+            targetEntity: Demandados
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Demandado:
+                    referencedColumnName: Id_Demandado
+            orphanRemoval: false
+        idEstudiante:
+            targetEntity: Estudiantes
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Estudiante:
+                    referencedColumnName: Id_Estudiante
+            orphanRemoval: false
+        idTribunal:
+            targetEntity: Tribunales
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Tribunal:
+                    referencedColumnName: Id_Tribunal
+            orphanRemoval: false
+        idPersona:
+            targetEntity: Personas
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Persona:
+                    referencedColumnName: Id_Persona
+            orphanRemoval: false
+        idTipo:
+            targetEntity: Tipocaso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Tipo:
+                    referencedColumnName: Id_Tipo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

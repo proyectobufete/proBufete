@@ -1,0 +1,26 @@
+BufeteBundle\Entity\Pretenciones:
+    type: entity
+    table: pretenciones
+    id:
+        idPretencion:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Pretencion
+            generator:
+                strategy: IDENTITY
+    fields:
+        pretencionProcesal:
+            type: text
+            nullable: false
+            length: 65535
+            options:
+                fixed: false
+            column: Pretencion_Procesal
+        estadoPretencion:
+            type: boolean
+            nullable: false
+            column: Estado_Pretencion
+    lifecycleCallbacks: {  }

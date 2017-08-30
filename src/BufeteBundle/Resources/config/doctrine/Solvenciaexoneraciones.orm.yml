@@ -1,0 +1,47 @@
+BufeteBundle\Entity\Solvenciaexoneraciones:
+    type: entity
+    table: solvenciaexoneraciones
+    indexes:
+        IX_Relationship29:
+            columns:
+                - Id_Exoneracion
+        IX_Relationship30:
+            columns:
+                - Id_Tipo
+    id:
+        idSolvencia:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Solvencia
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechaSolvencia:
+            type: datetime
+            nullable: false
+            column: Fecha_Solvencia
+    manyToOne:
+        idExoneracion:
+            targetEntity: Exoneraciones
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Exoneracion:
+                    referencedColumnName: Id_Exoneracion
+            orphanRemoval: false
+        idTipo:
+            targetEntity: Tipocaso
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Tipo:
+                    referencedColumnName: Id_Tipo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }

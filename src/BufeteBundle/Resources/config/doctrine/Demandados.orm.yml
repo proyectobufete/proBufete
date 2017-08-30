@@ -1,0 +1,46 @@
+BufeteBundle\Entity\Demandados:
+    type: entity
+    table: demandados
+    id:
+        idDemandado:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Demandado
+            generator:
+                strategy: IDENTITY
+    fields:
+        nombreDemandado:
+            type: string
+            nullable: false
+            length: 75
+            options:
+                fixed: false
+            column: Nombre_Demandado
+        direccionDemandado:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+            column: Direccion_Demandado
+        dirnotificacionDemandado:
+            type: string
+            nullable: false
+            length: 200
+            options:
+                fixed: false
+            column: DirNotificacion_Demandado
+        telefonoDemandado:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: Telefono_Demandado
+        estadoDemandado:
+            type: boolean
+            nullable: false
+            column: Estado_Demandado
+    lifecycleCallbacks: {  }
