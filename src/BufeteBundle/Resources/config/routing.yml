@@ -5,3 +5,7 @@ bufete_paises:
 bufete_homepage:
     path:     /
     defaults: { _controller: BufeteBundle:Default:index }
+
+bufete_departamentos:
+        resource: "@BufeteBundle/Resources/config/routing/departamentos.yml"
+        prefix:   /departamentos
