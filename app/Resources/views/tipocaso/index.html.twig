@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista tipo de caso</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id tipo</th>
+                <th>Tipo</th>
+                <th>Estado tipo</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipocaso in tipocasos %}
+            <tr>
+                <td><a href="{{ path('tipocaso_show', { 'id': tipocaso.idTipo }) }}">{{ tipocaso.idTipo }}</a></td>
+                <td>{{ tipocaso.tipo }}</td>
+                <td>{% if tipocaso.estadoTipo %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tipocaso_show', { 'id': tipocaso.idTipo }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tipocaso_edit', { 'id': tipocaso.idTipo }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipocaso_new') }}">Crear nuevo tipo de caso</a>
+        </li>
+    </ul>
+{% endblock %}

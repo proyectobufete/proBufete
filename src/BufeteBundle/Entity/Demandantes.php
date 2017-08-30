@@ -341,5 +341,9 @@ class Demandantes
     {
         return $this->idCiudad;
     }
-}
 
+    public function __toString()
+    {
+        return $this->nombreDemandante;
+    }
+}

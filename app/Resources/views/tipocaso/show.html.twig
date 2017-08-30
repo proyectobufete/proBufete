@@ -1,31 +1,31 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Paises</h1>
+    <h1>Tipo de caso</h1>
 
     <table>
         <tbody>
             <tr>
-                <th>Id pais</th>
-                <td>{{ paise.idPais }}</td>
+                <th>Id tipo</th>
+                <td>{{ tipocaso.idTipo }}</td>
             </tr>
             <tr>
-                <th>Pais</th>
-                <td>{{ paise.pais }}</td>
+                <th>Tipo</th>
+                <td>{{ tipocaso.tipo }}</td>
             </tr>
             <tr>
-                <th>Estadopais</th>
-                <td>{% if paise.estadoPais %}Yes{% else %}No{% endif %}</td>
+                <th>Estado tipo</th>
+                <td>{% if tipocaso.estadoTipo %}Yes{% else %}No{% endif %}</td>
             </tr>
         </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('paises_index') }}">Regresar a la lista</a>
+            <a href="{{ path('tipocaso_index') }}">Regresar a la lista</a>
         </li>
         <li>
-            <a href="{{ path('paises_edit', { 'id': paise.idPais }) }}">Editar</a>
+            <a href="{{ path('tipocaso_edit', { 'id': tipocaso.idTipo }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

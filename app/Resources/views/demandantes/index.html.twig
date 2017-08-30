@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Lista Demandantes</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id demandante</th>
+                <th>Nombre demandante</th>
+                <th>Edad demandante</th>
+                <th>Dpi demandante</th>
+                <th>Cedula demandante</th>
+                <th>Direccion demandante</th>
+                <th>Residencia demandante</th>
+                <th>Direccion de trabajo </th>
+                <th>Telefono demandante</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demandante in demandantes %}
+            <tr>
+                <td><a href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">{{ demandante.idDemandante }}</a></td>
+                <td>{{ demandante.nombreDemandante }}</td>
+                <td>{{ demandante.edadDemandante }}</td>
+                <td>{{ demandante.dpiDemandante }}</td>
+                <td>{{ demandante.cedulaDemandante }}</td>
+                <td>{{ demandante.direccionDemandante }}</td>
+                <td>{{ demandante.residenciaDemandante }}</td>
+                <td>{{ demandante.dirtrabajoDemandante }}</td>
+                <td>{{ demandante.telefonoDemandante }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('demandantes_edit', { 'id': demandante.idDemandante }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandantes_new') }}">Crear nuevo demandante</a>
+        </li>
+    </ul>
+{% endblock %}

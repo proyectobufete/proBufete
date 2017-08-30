@@ -80,5 +80,9 @@ class Pretenciones
     {
         return $this->estadoPretencion;
     }
-}
 
+    public function __toString()
+    {
+        return $this->pretencionProcesal;
+    }
+}

@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Tribunales</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id tribunal</th>
+                <td>{{ tribunale.idTribunal }}</td>
+            </tr>
+            <tr>
+                <th>Tribunal</th>
+                <td>{{ tribunale.tribunal }}</td>
+            </tr>
+            <tr>
+                <th>Estado tribunal</th>
+                <td>{% if tribunale.estadoTribunal %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tribunales_index') }}">Regresar a la lista</a>
+        </li>
+        <li>
+            <a href="{{ path('tribunales_edit', { 'id': tribunale.idTribunal }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
