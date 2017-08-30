@@ -1,16 +1,17 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Departamentos list</h1>
+    <h1>Listado de departamentos</h1>
 
     <table>
         <thead>
-            <tr>
-                <th>Iddepartamento</th>
-                <th>Postaldepartamento</th>
-                <th>Departamento</th>
-                <th>Actions</th>
-            </tr>
+          <tr>
+              <th>Id departamento</th>
+              <th>Codigo Postal departamento</th>
+              <th>Departamento</th>
+              <th>Pais</th>
+              <th>Opciones</th>
+          </tr>
         </thead>
         <tbody>
         {% for departamento in departamentos %}
@@ -18,13 +19,14 @@
                 <td><a href="{{ path('departamentos_show', { 'id': departamento.idDepartamento }) }}">{{ departamento.idDepartamento }}</a></td>
                 <td>{{ departamento.postalDepartamento }}</td>
                 <td>{{ departamento.departamento }}</td>
+                <td>{{ departamento.idPais.pais }}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('departamentos_show', { 'id': departamento.idDepartamento }) }}">show</a>
+                            <a href="{{ path('departamentos_show', { 'id': departamento.idDepartamento }) }}">Mostrar</a>
                         </li>
                         <li>
-                            <a href="{{ path('departamentos_edit', { 'id': departamento.idDepartamento }) }}">edit</a>
+                            <a href="{{ path('departamentos_edit', { 'id': departamento.idDepartamento }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>
@@ -35,7 +37,7 @@
 
     <ul>
         <li>
-            <a href="{{ path('departamentos_new') }}">Create a new entry</a>
+            <a href="{{ path('departamentos_new') }}">Crear Nuevo departamento</a>
         </li>
     </ul>
 {% endblock %}
