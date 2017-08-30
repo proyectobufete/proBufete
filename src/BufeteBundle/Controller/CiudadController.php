@@ -1,0 +1,128 @@
+<?php
+
+namespace BufeteBundle\Controller;
+
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+
+use BufeteBundle\Entity\Ciudad;
+use BufeteBundle\Form\CiudadType;
+
+/**
+ * Ciudad controller.
+ *
+ */
+class CiudadController extends Controller
+{
+    /**
+     * Lists all Ciudad entities.
+     *
+     */
+    public function indexAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $ciudads = $em->getRepository('BufeteBundle:Ciudad')->findAll();
+
+        return $this->render('ciudad/index.html.twig', array(
+            'ciudads' => $ciudads,
+        ));
+    }
+
+    /**
+     * Creates a new Ciudad entity.
+     *
+     */
+    public function newAction(Request $request)
+    {
+        $ciudad = new Ciudad();
+        $form = $this->createForm('BufeteBundle\Form\CiudadType', $ciudad);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($ciudad);
+            $em->flush();
+
+            return $this->redirectToRoute('ciudad_show', array('id' => $ciudad->getIdCiudad()));
+        }
+
+        return $this->render('ciudad/new.html.twig', array(
+            'ciudad' => $ciudad,
+            'form' => $form->createView(),
+        ));
+    }
+
+    /**
+     * Finds and displays a Ciudad entity.
+     *
+     */
+    public function showAction(Ciudad $ciudad)
+    {
+        $deleteForm = $this->createDeleteForm($ciudad);
+
+        return $this->render('ciudad/show.html.twig', array(
+            'ciudad' => $ciudad,
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Displays a form to edit an existing Ciudad entity.
+     *
+     */
+    public function editAction(Request $request, Ciudad $ciudad)
+    {
+        $deleteForm = $this->createDeleteForm($ciudad);
+        $editForm = $this->createForm('BufeteBundle\Form\CiudadType', $ciudad);
+        $editForm->handleRequest($request);
+
+        if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($ciudad);
+            $em->flush();
+
+            return $this->redirectToRoute('ciudad_edit', array('id' => $ciudad->getIdCiudad()));
+        }
+
+        return $this->render('ciudad/edit.html.twig', array(
+            'ciudad' => $ciudad,
+            'edit_form' => $editForm->createView(),
+            'delete_form' => $deleteForm->createView(),
+        ));
+    }
+
+    /**
+     * Deletes a Ciudad entity.
+     *
+     */
+    public function deleteAction(Request $request, Ciudad $ciudad)
+    {
+        $form = $this->createDeleteForm($ciudad);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($ciudad);
+            $em->flush();
+        }
+
+        return $this->redirectToRoute('ciudad_index');
+    }
+
+    /**
+     * Creates a form to delete a Ciudad entity.
+     *
+     * @param Ciudad $ciudad The Ciudad entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
+    private function createDeleteForm(Ciudad $ciudad)
+    {
+        return $this->createFormBuilder()
+            ->setAction($this->generateUrl('ciudad_delete', array('id' => $ciudad->getIdCiudad())))
+            ->setMethod('DELETE')
+            ->getForm()
+        ;
+    }
+}

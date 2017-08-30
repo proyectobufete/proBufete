@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Demandados list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Iddemandado</th>
+                <th>Nombredemandado</th>
+                <th>Direcciondemandado</th>
+                <th>Dirnotificaciondemandado</th>
+                <th>Telefonodemandado</th>
+                <th>Estadodemandado</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for demandado in demandados %}
+            <tr>
+                <td><a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">{{ demandado.idDemandado }}</a></td>
+                <td>{{ demandado.nombreDemandado }}</td>
+                <td>{{ demandado.direccionDemandado }}</td>
+                <td>{{ demandado.dirnotificacionDemandado }}</td>
+                <td>{{ demandado.telefonoDemandado }}</td>
+                <td>{% if demandado.estadoDemandado %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandados_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}
