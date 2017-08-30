@@ -13,3 +13,7 @@ bufete_departamentos:
 bufete_ciudad:
         resource: "@BufeteBundle/Resources/config/routing/ciudad.yml"
         prefix:   /ciudad
+
+bufete_estadosciviles:
+        resource: "@BufeteBundle/Resources/config/routing/estadosciviles.yml"
+        prefix:   /estadosciviles

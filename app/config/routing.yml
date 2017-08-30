@@ -17,3 +17,7 @@ Departamentos:
 Ciudades:
     resource: "@BufeteBundle/Resources/config/routing/ciudad.yml"
     prefix:     /ciudad
+
+EstadosCiviles:
+    resource: "@BufeteBundle/Resources/config/routing/estadosciviles.yml"
+    prefix:     /estadosciviles
