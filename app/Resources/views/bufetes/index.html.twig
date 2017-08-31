@@ -1,11 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
+<div class="col-lg-8">
     <h1>Lista Bufetes</h1>
 
-    <table>
+    <table class="table table-bordered">
         <thead>
-            <tr>
+            <tr class="success">
                 <th>Id bufete</th>
                 <th>Nombre bufete</th>
                 <th>Telefono1 </th>
@@ -27,14 +28,8 @@
                 <td>{{ bufete.direccionBufete }}</td>
                 <td>{{ bufete.estadoBufete }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}">Ver</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}">Editar</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}" class="btn btn-info">Ver</a>
+                    <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}" class="btn btn-warning">Editar</a>
                 </td>
             </tr>
         {% endfor %}
@@ -43,7 +38,8 @@
 
     <ul>
         <li>
-            <a href="{{ path('bufetes_new') }}">Crear nuevo Bufete</a>
+            <a href="{{ path('bufetes_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Crear nuevo Bufete</a>
         </li>
     </ul>
+  </div>
 {% endblock %}

@@ -43,13 +43,17 @@ class DemandantesController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($demandante);
             $em->flush();
+            $status ="Formulario Valido";
 
-            return $this->redirectToRoute('demandantes_show', array('id' => $demandante->getIdDemandante()));
+          //  return $this->redirectToRoute('demandantes_show', array('id' => $demandante->getIdDemandante()));
+        }else{
+            $status = null;
         }
 
         return $this->render('demandantes/new.html.twig', array(
             'demandante' => $demandante,
             'form' => $form->createView(),
+            'status' => $status
         ));
     }
 
