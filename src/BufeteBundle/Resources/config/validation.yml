@@ -1,0 +1,7 @@
+BufeteBundle\Entity\Demandantes:
+    properties:
+        dpiDemandante:
+            - Regex:
+                pattern: '/[0-9]{4}\s?[0-9]{5}\s?[0-9]{4}/'
+                match:   true
+                message: El DPI no es valido

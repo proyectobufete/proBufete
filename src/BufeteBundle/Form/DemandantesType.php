@@ -5,7 +5,7 @@ namespace BufeteBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 class DemandantesType extends AbstractType
 {
     /**
@@ -17,7 +17,9 @@ class DemandantesType extends AbstractType
         $builder
             ->add('nombreDemandante')
             ->add('edadDemandante')
-            ->add('dpiDemandante')
+            ->add('dpiDemandante' ,TextType::class, array("label"=>"DPI:",  "attr" =>array(
+      				"class" => "form-control",
+      			)))
             ->add('cedulaDemandante')
             ->add('direccionDemandante')
             ->add('residenciaDemandante')
@@ -28,7 +30,7 @@ class DemandantesType extends AbstractType
             ->add('idCiudad')
         ;
     }
-    
+
     /**
      * @param OptionsResolver $resolver
      */
