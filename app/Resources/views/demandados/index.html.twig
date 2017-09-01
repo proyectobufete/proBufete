@@ -1,20 +1,20 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Demandados list</h1>
+    <h1>Listado Demandados </h1>
 
     <table>
-        <thead>
-            <tr>
-                <th>Iddemandado</th>
-                <th>Nombredemandado</th>
-                <th>Direcciondemandado</th>
-                <th>Dirnotificaciondemandado</th>
-                <th>Telefonodemandado</th>
-                <th>Estadodemandado</th>
-                <th>Actions</th>
-            </tr>
-        </thead>
+      <thead>
+          <tr>
+              <th>Id demandado</th>
+              <th>Nombre demandado</th>
+              <th>Direccion demandado</th>
+              <th>Dir notificacion demandado</th>
+              <th>Telefono demandado</th>
+              <th>Estado demandado</th>
+              <th>Opciones</th>
+          </tr>
+      </thead>
         <tbody>
         {% for demandado in demandados %}
             <tr>
@@ -23,14 +23,14 @@
                 <td>{{ demandado.direccionDemandado }}</td>
                 <td>{{ demandado.dirnotificacionDemandado }}</td>
                 <td>{{ demandado.telefonoDemandado }}</td>
-                <td>{% if demandado.estadoDemandado %}Yes{% else %}No{% endif %}</td>
+                <td>{% if demandado.estadoDemandado %}si{% else %}No{% endif %}</td>
                 <td>
                     <ul>
                         <li>
-                            <a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">show</a>
+                            <a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">Mostrar</a>
                         </li>
                         <li>
-                            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">edit</a>
+                            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">Editar</a>
                         </li>
                     </ul>
                 </td>

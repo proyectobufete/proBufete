@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Lista de Tribunales</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id tribunal</th>
+                <th>Tribunal</th>
+                <th>Estado tribunal</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tribunale in tribunales %}
+            <tr>
+                <td><a href="{{ path('tribunales_show', { 'id': tribunale.idTribunal }) }}">{{ tribunale.idTribunal }}</a></td>
+                <td>{{ tribunale.tribunal }}</td>
+                <td>{% if tribunale.estadoTribunal %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tribunales_show', { 'id': tribunale.idTribunal }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tribunales_edit', { 'id': tribunale.idTribunal }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tribunales_new') }}">Crear nuevo tribunal</a>
+        </li>
+    </ul>
+{% endblock %}

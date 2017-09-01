@@ -1,16 +1,16 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Departamentos creation</h1>
+<h1>Crear Departamento </h1>
 
     {{ form_start(form) }}
         {{ form_widget(form) }}
-        <input type="submit" value="Create" />
+        <input type="submit" value="Crear" />
     {{ form_end(form) }}
 
     <ul>
         <li>
-            <a href="{{ path('departamentos_index') }}">Back to the list</a>
+            <a href="{{ path('departamentos_index') }}">Regresar al Listado</a>
         </li>
     </ul>
 {% endblock %}

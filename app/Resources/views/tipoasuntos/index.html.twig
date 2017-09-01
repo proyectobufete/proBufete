@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Lsta tipo de asuntos</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id tipoasunto</th>
+                <th>Asunto</th>
+                <th>Estado asunto</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tipoasunto in tipoasuntos %}
+            <tr>
+                <td><a href="{{ path('tipoasuntos_show', { 'id': tipoasunto.idTipoasunto }) }}">{{ tipoasunto.idTipoasunto }}</a></td>
+                <td>{{ tipoasunto.asunto }}</td>
+                <td>{% if tipoasunto.estadoAsunto %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('tipoasuntos_show', { 'id': tipoasunto.idTipoasunto }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('tipoasuntos_edit', { 'id': tipoasunto.idTipoasunto }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('tipoasuntos_new') }}">Crear nuevo tipo de asunto</a>
+        </li>
+    </ul>
+{% endblock %}

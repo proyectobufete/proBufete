@@ -1,35 +1,35 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
-    <h1>Estadosciviles</h1>
+  <h1>Estados civiles</h1>
 
     <table>
-        <tbody>
-            <tr>
-                <th>Idestadocivil</th>
-                <td>{{ estadoscivile.idEstadocivil }}</td>
-            </tr>
-            <tr>
-                <th>Estadocivil</th>
-                <td>{{ estadoscivile.estadocivil }}</td>
-            </tr>
-            <tr>
-                <th>Estadoestadocivil</th>
-                <td>{% if estadoscivile.estadoEstadocivil %}Yes{% else %}No{% endif %}</td>
-            </tr>
-        </tbody>
+      <tbody>
+          <tr>
+              <th>Id estadocivil</th>
+              <td>{{ estadoscivile.idEstadocivil }}</td>
+          </tr>
+          <tr>
+              <th>Estado civil</th>
+              <td>{{ estadoscivile.estadocivil }}</td>
+          </tr>
+          <tr>
+              <th>Estado</th>
+              <td>{% if estadoscivile.estadoEstadocivil %}Activo{% else %}No{% endif %}</td>
+          </tr>
+      </tbody>
     </table>
 
     <ul>
         <li>
-            <a href="{{ path('estadosciviles_index') }}">Back to the list</a>
+            <a href="{{ path('estadosciviles_index') }}">Regresar al Listado</a>
         </li>
         <li>
-            <a href="{{ path('estadosciviles_edit', { 'id': estadoscivile.idEstadocivil }) }}">Edit</a>
+            <a href="{{ path('estadosciviles_edit', { 'id': estadoscivile.idEstadocivil }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
+                <input type="submit" value="Eliminar">
             {{ form_end(delete_form) }}
         </li>
     </ul>

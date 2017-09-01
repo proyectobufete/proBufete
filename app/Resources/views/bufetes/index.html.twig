@@ -1,0 +1,45 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+<div class="col-lg-8">
+    <h1>Lista Bufetes</h1>
+
+    <table class="table table-bordered">
+        <thead>
+            <tr class="success">
+                <th>Id bufete</th>
+                <th>Nombre bufete</th>
+                <th>Telefono1 </th>
+                <th>Telefono2</th>
+                <th>Email bufete</th>
+                <th>Direccion bufete</th>
+                <th>Estado bufete</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for bufete in bufetes %}
+            <tr>
+                <td><a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}">{{ bufete.idBufete }}</a></td>
+                <td>{{ bufete.nombreBufete }}</td>
+                <td>{{ bufete.telefono1Bufete }}</td>
+                <td>{{ bufete.telefono2 }}</td>
+                <td>{{ bufete.emailBufete }}</td>
+                <td>{{ bufete.direccionBufete }}</td>
+                <td>{{ bufete.estadoBufete }}</td>
+                <td>
+                    <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}" class="btn btn-info">Ver</a>
+                    <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}" class="btn btn-warning">Editar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('bufetes_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Crear nuevo Bufete</a>
+        </li>
+    </ul>
+  </div>
+{% endblock %}

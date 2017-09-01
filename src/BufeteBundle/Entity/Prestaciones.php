@@ -80,5 +80,9 @@ class Prestaciones
     {
         return $this->estadoPrestacion;
     }
-}
 
+    public function __toString()
+    {
+        return $this->prestacion;
+    }
+}

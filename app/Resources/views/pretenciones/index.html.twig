@@ -1,0 +1,41 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Lista de Pretenciones</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id pretencion</th>
+                <th>Pretencion procesal</th>
+                <th>Estado pretencion</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for pretencione in pretenciones %}
+            <tr>
+                <td><a href="{{ path('pretenciones_show', { 'id': pretencione.idPretencion }) }}">{{ pretencione.idPretencion }}</a></td>
+                <td>{{ pretencione.pretencionProcesal }}</td>
+                <td>{% if pretencione.estadoPretencion %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('pretenciones_show', { 'id': pretencione.idPretencion }) }}">Ver</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('pretenciones_edit', { 'id': pretencione.idPretencion }) }}">Editar</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('pretenciones_new') }}">Crear nueva pretencion </a>
+        </li>
+    </ul>
+{% endblock %}

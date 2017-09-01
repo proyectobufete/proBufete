@@ -1,0 +1,60 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Demandantes</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id demandante</th>
+                <td>{{ demandante.idDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Nombre demandante</th>
+                <td>{{ demandante.nombreDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Edad demandante</th>
+                <td>{{ demandante.edadDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Dpi demandante</th>
+                <td>{{ demandante.dpiDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Cedula demandante</th>
+                <td>{{ demandante.cedulaDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Direccion demandante</th>
+                <td>{{ demandante.direccionDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Residencia demandante</th>
+                <td>{{ demandante.residenciaDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Direccion de trabajo demandante</th>
+                <td>{{ demandante.dirtrabajoDemandante }}</td>
+            </tr>
+            <tr>
+                <th>Telefono demandante</th>
+                <td>{{ demandante.telefonoDemandante }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('demandantes_index') }}">Regresar a la lista</a>
+        </li>
+        <li>
+            <a href="{{ path('demandantes_edit', { 'id': demandante.idDemandante }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

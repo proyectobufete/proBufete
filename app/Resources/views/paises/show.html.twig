@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'layout.html.twig' %}
 
 {% block body %}
     <h1>Paises</h1>
@@ -6,7 +6,7 @@
     <table>
         <tbody>
             <tr>
-                <th>Idpais</th>
+                <th>Id pais</th>
                 <td>{{ paise.idPais }}</td>
             </tr>
             <tr>
@@ -22,10 +22,10 @@
 
     <ul>
         <li>
-            <a href="{{ path('paises_index') }}">Back to the list</a>
+            <a href="{{ path('paises_index') }}">Regresar a la lista</a>
         </li>
         <li>
-            <a href="{{ path('paises_edit', { 'id': paise.idPais }) }}">Edit</a>
+            <a href="{{ path('paises_edit', { 'id': paise.idPais }) }}">Editar</a>
         </li>
         <li>
             {{ form_start(delete_form) }}

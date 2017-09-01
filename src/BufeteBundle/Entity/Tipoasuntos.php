@@ -80,5 +80,9 @@ class Tipoasuntos
     {
         return $this->estadoAsunto;
     }
-}
 
+    public function __toString()
+    {
+        return $this->asunto;
+    }
+}

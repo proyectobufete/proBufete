@@ -1,0 +1,36 @@
+{% extends 'layout.html.twig' %}
+
+{% block body %}
+    <h1>Prestaciones</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id prestaciones</th>
+                <td>{{ prestacione.idPrestaciones }}</td>
+            </tr>
+            <tr>
+                <th>Prestacion</th>
+                <td>{{ prestacione.prestacion }}</td>
+            </tr>
+            <tr>
+                <th>Estado prestacion</th>
+                <td>{% if prestacione.estadoPrestacion %}Yes{% else %}No{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('prestaciones_index') }}">Regresar a la lista</a>
+        </li>
+        <li>
+            <a href="{{ path('prestaciones_edit', { 'id': prestacione.idPrestaciones }) }}">Editar</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}
