@@ -370,5 +370,9 @@ class Casos
     {
         return $this->idTipo;
     }
-}
 
+    public function __toString()
+    {
+        return $this->noCaso;
+    }
+}

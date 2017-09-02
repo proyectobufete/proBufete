@@ -145,9 +145,9 @@ class Demandados
     }
 
     public function __toString()
- {
-   return $this->Demandado;
- }
+    {
+      return $this->nombreDemandado;
+    }
 
     /**
      * Set estadoDemandado

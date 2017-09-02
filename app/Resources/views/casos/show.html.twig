@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Casos</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Idcaso</th>
+                <td>{{ caso.idCaso }}</td>
+            </tr>
+            <tr>
+                <th>Nocaso</th>
+                <td>{{ caso.noCaso }}</td>
+            </tr>
+            <tr>
+                <th>Fechacaso</th>
+                <td>{% if caso.fechaCaso %}{{ caso.fechaCaso|date('Y-m-d H:i:s') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Pruebascaso</th>
+                <td>{{ caso.pruebasCaso }}</td>
+            </tr>
+            <tr>
+                <th>Asignatariocaso</th>
+                <td>{{ caso.asignatarioCaso }}</td>
+            </tr>
+            <tr>
+                <th>Estadocaso</th>
+                <td>{{ caso.estadoCaso }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('casos_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a href="{{ path('casos_edit', { 'id': caso.idCaso }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+{% endblock %}

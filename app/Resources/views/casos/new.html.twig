@@ -1,0 +1,19 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Casos creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    {% if id_estudiante != null %}
+        <h4> {{ id_estudiante }} </h4>
+    {% endif %}
+    <ul>
+        <li>
+            <a href="{{ path('casos_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}
