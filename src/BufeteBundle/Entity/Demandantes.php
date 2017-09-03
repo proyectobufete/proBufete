@@ -344,6 +344,7 @@ class Demandantes
 
     public function __toString()
     {
-        return $this->nombreDemandante;
+        $demandante = $this->nombreDemandante." ".$this->dpiDemandante;
+        return $demandante;
     }
 }
