@@ -1,53 +1,51 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}
+  <h1>Listado de Demandantes</h1>
+{% endblock %}
 {% block body %}
-    <h1>Lista Demandantes</h1>
+<div class="portlet-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="btn-group">
+                  <a href="{{ path('demandantes_new') }}">
+                    <button id="sample_editable_1_new" class="btn green">
+                      Agregar Demandante <i class="fa fa-plus"></i>
+                    </button></a>
+        </div>
+      </div>
+    </div>
 
-    <table>
+  <div class="id="sample_1_wrapper" class="dataTable_wrapper table-responsive"">
+      <table class="table table-striped table-bordered table-hover dataTable no-footer">
         <thead>
-            <tr>
-                <th>Id demandante</th>
-                <th>Nombre demandante</th>
-                <th>Edad demandante</th>
-                <th>Dpi demandante</th>
-                <th>Cedula demandante</th>
-                <th>Direccion demandante</th>
-                <th>Residencia demandante</th>
-                <th>Direccion de trabajo </th>
-                <th>Telefono demandante</th>
-                <th>Acciones</th>
-            </tr>
+          <tr role="row" class="">
+            <th>Nombre </th>
+            <th>Edad </th>
+            <th>Dpi </th>
+            <th>Direccion </th>
+            <th>Direccion de trabajo </th>
+            <th>Teléfono </th>
+            <th>Acciones</th>
+          </tr>
         </thead>
         <tbody>
-        {% for demandante in demandantes %}
-            <tr>
-                <td><a href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">{{ demandante.idDemandante }}</a></td>
-                <td>{{ demandante.nombreDemandante }}</td>
-                <td>{{ demandante.edadDemandante }}</td>
-                <td>{{ demandante.dpiDemandante }}</td>
-                <td>{{ demandante.cedulaDemandante }}</td>
-                <td>{{ demandante.direccionDemandante }}</td>
-                <td>{{ demandante.residenciaDemandante }}</td>
-                <td>{{ demandante.dirtrabajoDemandante }}</td>
-                <td>{{ demandante.telefonoDemandante }}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">Ver</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('demandantes_edit', { 'id': demandante.idDemandante }) }}">Editar</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+          {% for demandante in demandantes %}
+              <tr>
+                  <td>{{ demandante.nombreDemandante }}</td>
+                  <td>{{ demandante.edadDemandante }}</td>
+                  <td>{{ demandante.dpiDemandante }}</td>
+                  <td>{{ demandante.direccionDemandante }}</td>
+                  <td>{{ demandante.dirtrabajoDemandante }}</td>
+                  <td>{{ demandante.telefonoDemandante }}</td>
+                  <td>
+                      <a class="btn blue" href="{{ path('demandantes_show', { 'id': demandante.idDemandante }) }}">Ver</a>
+                      <a class="btn btn-warning" href="{{ path('demandantes_edit', { 'id': demandante.idDemandante }) }}">Editar</a>
+                  </td>
+              </tr>
+          {% endfor %}
         </tbody>
-    </table>
+      </table>
+  </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('demandantes_new') }}">Crear nuevo demandante</a>
-        </li>
-    </ul>
+</div>
 {% endblock %}

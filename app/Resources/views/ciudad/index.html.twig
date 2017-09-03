@@ -1,43 +1,48 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}
+  <h1>Listado de Ciudades</h1>
+{% endblock %}
 {% block body %}
-    <h1>Listado de Ciudades</h1>
+<div class="portlet-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="btn-group">
+                  <a href="{{ path('ciudad_new') }}">
+                    <button id="sample_editable_1_new" class="btn green">
+                      Agregar Ciudad <i class="fa fa-plus"></i>
+                    </button></a>
+        </div>
+      </div>
+    </div>
 
-    <table>
+  <div class="id="sample_1_wrapper" class="dataTable_wrapper table-responsive"">
+      <table class="table table-striped table-bordered table-hover dataTable no-footer">
         <thead>
-          <tr>
-              <th>Idciudad</th>
-              <th>Postalciudad</th>
-              <th>Ciudad</th>
-              <th>Estado </th>
-              <th>Opciones</th>
+          <tr role="row" class="">
+            <th>Id Ciudad</th>
+            <th>Código Postal</th>
+            <th>Ciudad</th>
+            <th>Estado </th>
+            <th>Opciones</th>
           </tr>
         </thead>
         <tbody>
-        {% for ciudad in ciudads %}
-        <tr>
-            <td><a href="{{ path('ciudad_show', { 'id': ciudad.idCiudad }) }}">{{ ciudad.idCiudad }}</a></td>
-            <td>{{ ciudad.postalCiudad }}</td>
-            <td>{{ ciudad.ciudad }}</td>
-            <td>{% if ciudad.estadoCiudad %}Activo{% else %}No{% endif %}</td>
-            <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('ciudad_show', { 'id': ciudad.idCiudad }) }}">Mostrar</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('ciudad_edit', { 'id': ciudad.idCiudad }) }}">Editar</a>
-                    </li>
-                </ul>
-            </td>
-        </tr>
-        {% endfor %}
-        </tbody>
-    </table>
+          {% for ciudad in ciudads %}
+          <tr>
+              <td><a href="{{ path('ciudad_show', { 'id': ciudad.idCiudad }) }}">{{ ciudad.idCiudad }}</a></td>
+              <td>{{ ciudad.postalCiudad }}</td>
+              <td>{{ ciudad.ciudad }}</td>
+              <td>{% if ciudad.estadoCiudad %}Activo{% else %}No{% endif %}</td>
+              <td>
+                  <a href="{{ path('ciudad_show', { 'id': ciudad.idCiudad }) }}" class="btn blue" >Ver</a>
+                  <a href="{{ path('ciudad_edit', { 'id': ciudad.idCiudad }) }}" class="btn btn-warning">Editar</a>
+              </td>
+          </tr>
+          {% endfor %}
 
-    <ul>
-        <li>
-            <a href="{{ path('ciudad_new') }}">Crear Nueva Ciudad</a>
-        </li>
-    </ul>
+        </tbody>
+      </table>
+  </div>
+
+</div>
 {% endblock %}

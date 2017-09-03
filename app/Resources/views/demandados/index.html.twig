@@ -1,47 +1,51 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}
+  <h1>Listado de Demandados</h1>
+{% endblock %}
 {% block body %}
-    <h1>Listado Demandados </h1>
+<div class="portlet-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="btn-group">
+                  <a href="{{ path('demandados_new') }}">
+                    <button id="sample_editable_1_new" class="btn green">
+                      Agregar Demandado <i class="fa fa-plus"></i>
+                    </button></a>
+        </div>
+      </div>
+    </div>
 
-    <table>
-      <thead>
-          <tr>
-              <th>Id demandado</th>
-              <th>Nombre demandado</th>
-              <th>Direccion demandado</th>
-              <th>Dir notificacion demandado</th>
-              <th>Telefono demandado</th>
-              <th>Estado demandado</th>
-              <th>Opciones</th>
+  <div class="id="sample_1_wrapper" class="dataTable_wrapper table-responsive"">
+      <table class="table table-striped table-bordered table-hover dataTable no-footer">
+        <thead>
+          <tr role="row" class="">
+            <th>Id Demandado</th>
+            <th>Nombre </th>
+            <th>Direccion </th>
+            <th>Direccion de notificación </th>
+            <th>Telefono </th>
+            <th>Estado</th>
+            <th>Opciones</th>
           </tr>
-      </thead>
+        </thead>
         <tbody>
-        {% for demandado in demandados %}
-            <tr>
-                <td><a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">{{ demandado.idDemandado }}</a></td>
-                <td>{{ demandado.nombreDemandado }}</td>
-                <td>{{ demandado.direccionDemandado }}</td>
-                <td>{{ demandado.dirnotificacionDemandado }}</td>
-                <td>{{ demandado.telefonoDemandado }}</td>
-                <td>{% if demandado.estadoDemandado %}si{% else %}No{% endif %}</td>
-                <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">Mostrar</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">Editar</a>
-                        </li>
-                    </ul>
-                </td>
-            </tr>
-        {% endfor %}
+          {% for demandado in demandados %}
+              <tr>
+                  <td><a href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">{{ demandado.idDemandado }}</a></td>
+                  <td>{{ demandado.nombreDemandado }}</td>
+                  <td>{{ demandado.direccionDemandado }}</td>
+                  <td>{{ demandado.dirnotificacionDemandado }}</td>
+                  <td>{{ demandado.telefonoDemandado }}</td>
+                  <td>{% if demandado.estadoDemandado %}Activo{% else %}No{% endif %}</td>
+                  <td>
+                      <a class="btn blue" href="{{ path('demandados_show', { 'id': demandado.idDemandado }) }}">Mostrar</a>
+                      <a class="btn btn-warning" href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">Editar</a>
+                  </td>
+              </tr>
+          {% endfor %}
         </tbody>
-    </table>
+      </table>
+  </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('demandados_new') }}">Create a new entry</a>
-        </li>
-    </ul>
+</div>
 {% endblock %}
