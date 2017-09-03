@@ -40,12 +40,14 @@ class CasosController extends Controller
         $form->handleRequest($request);
 
         $id_estudiante = null;
+        $tipo_de_caso = null;
+        $mensaje = null;
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $em->persist($caso);
-            $em->flush();
+
             $id_estudiante = $form->get('idEstudiante')->getData();
+            $tipo_de_caso = $form->get('idTipo')->getData();
 
             $db = $em->getConnection();
             $query = "SELECT casos.Id_Tipo ,count(casos.Id_Tipo) as Cantidad
@@ -56,23 +58,51 @@ class CasosController extends Controller
             			ON estudiantes.Id_Persona = personas.Id_Persona
             where estudiantes.Carne_Estudiante = ? and casos.Estado_Caso = ?
             group by casos.Id_Tipo";
-
             $stmt = $db->prepare($query);
             $params = array($id_estudiante,2);
             $stmt->execute($params);
             $cantidad = $stmt->fetchAll();
 
+            $civiles = 0;
+            $laborales = 0;
+
             foreach ($cantidad as $cant) {
-              echo $cant["Id_Tipo"]."  ";
-              echo $cant["Cantidad"]."<br>";
+              if($cant["Id_Tipo"] == 1)
+              {
+                  $civiles = $cant["Cantidad"];
+              }
+              elseif ($cant["Id_Tipo"] == 2)
+              {
+                  $laborales = $cant["Cantidad"];
+              }
             }
+
+            if($tipo_de_caso == "Civil"){
+              if($civiles < 2){
+                $em->persist($caso);
+                $em->flush();
+                return $this->redirectToRoute('casos_show', array('id' => $caso->getIdCaso()));
+              }else{
+                $mensaje = "Ha llegado al limite de casos civiles";
+              }
+            }
+            elseif ($tipo_de_caso == "Laboral") {
+              if($laborales < 1){
+                $em->persist($caso);
+                $em->flush();
+                return $this->redirectToRoute('casos_show', array('id' => $caso->getIdCaso()));
+              } else {
+                $mensaje = "Ha llegado al limite de casos laborales";
+              }
+            }
+
             //return $this->redirectToRoute('casos_show', array('id' => $caso->getIdCaso()));
         }
 
         return $this->render('casos/new.html.twig', array(
             'caso' => $caso,
             'form' => $form->createView(),
-            'id_estudiante' => $id_estudiante
+            'mensaje' => $mensaje
         ));
     }
 
