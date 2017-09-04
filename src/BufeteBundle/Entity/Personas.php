@@ -283,33 +283,11 @@ class Personas
     {
         return $this->idBufete;
     }
-    /**
-     * @var string
-     */
-    private $contraseñaPersona;
 
 
-    /**
-     * Set contraseñaPersona
-     *
-     * @param string $contraseñaPersona
-     *
-     * @return Personas
-     */
-    public function setContraseñaPersona($contraseñaPersona)
+    public function __toString()
     {
-        $this->contraseñaPersona = $contraseñaPersona;
+        return $this->nombrePersona;
 
-        return $this;
-    }
-
-    /**
-     * Get contraseñaPersona
-     *
-     * @return string
-     */
-    public function getContraseñaPersona()
-    {
-        return $this->contraseñaPersona;
     }
 }

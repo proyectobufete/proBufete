@@ -32,7 +32,7 @@
         <option name="fixed"/>
       </options>
     </field>
-    <field name="contraseñaPersona" type="string" column="Contraseña_Persona" length="15" nullable="false">
+    <field name="contrasenaPersona" type="string" column="Contrasena_Persona" length="15" nullable="false">
       <options>
         <option name="fixed"/>
       </options>

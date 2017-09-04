@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Laborales list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Idtipolaboral</th>
+                <th>Fechainicio</th>
+                <th>Fechafin</th>
+                <th>Salario</th>
+                <th>Estadolaboral</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for laborale in laborales %}
+            <tr>
+                <td><a href="{{ path('laborales_show', { 'id': laborale.idTipolaboral }) }}">{{ laborale.idTipolaboral }}</a></td>
+                <td>{% if laborale.fechaInicio %}{{ laborale.fechaInicio|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{% if laborale.fechaFin %}{{ laborale.fechaFin|date('Y-m-d H:i:s') }}{% endif %}</td>
+                <td>{{ laborale.salario }}</td>
+                <td>{% if laborale.estadoLaboral %}Yes{% else %}No{% endif %}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('laborales_show', { 'id': laborale.idTipolaboral }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('laborales_edit', { 'id': laborale.idTipolaboral }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('laborales_new') }}">Create a new entry</a>
+        </li>
+    </ul>
+{% endblock %}

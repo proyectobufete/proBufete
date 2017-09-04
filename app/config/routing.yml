@@ -59,3 +59,18 @@ Demandados:
     resource: "@BufeteBundle/Resources/config/routing/demandados.yml"
     prefix:     /demandados
 
+Personas:
+    resource: "@BufeteBundle/Resources/config/routing/personas.yml"
+    prefix:     /personas
+
+Estudiantes:
+    resource: "@BufeteBundle/Resources/config/routing/estudiantes.yml"
+    prefix:     /estudiantes
+
+Casos:
+    resource: "@BufeteBundle/Resources/config/routing/casos.yml"
+    prefix:     /casos
+
+Laborales:
+    resource: "@BufeteBundle/Resources/config/routing/laborales.yml"
+    prefix:     /laborales

@@ -50,13 +50,13 @@ BufeteBundle\Entity\Personas:
             options:
                 fixed: false
             column: Usuario_Persona
-        contraseñaPersona:
+        contrasenaPersona:
             type: string
             nullable: false
             length: 15
             options:
                 fixed: false
-            column: Contraseña_Persona
+            column: Contrasena_Persona
         estadoPersona:
             type: integer
             nullable: false
