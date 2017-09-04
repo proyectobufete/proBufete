@@ -8,36 +8,36 @@
       <div id="form_sample_1" class="form-horizontal" >
         {{ form_start(form,{'attr':{'role':'form'}}) }}
         <div class="form-body colorform">
-          <div class="col-md-offset-2">
+          <div class="col-md-offset-4">
           <div class="form-group ">
-            <div class="col-md-4">
+            <div class="col-md-5">
               {{form_label(form.postalCiudad,'Código Postal')}}
               {{ form_widget(form.postalCiudad,{'attr':{'class' : 'form-control'}}) }}
             </div>
           </div>
           <div class="form-group ">
-            <div class="col-md-4">
+            <div class="col-md-5">
               {{form_label(form.ciudad,'Nombre Ciudad')}}
               {{ form_widget(form.ciudad,{'attr':{'class' : 'form-control'}}) }}
             </div>
           </div>
           <div class="form-group ">
-            <div class="col-md-4">
-              {{form_label(form.estadoCiudad,'Estado')}}
-              {{ form_widget(form.estadoCiudad,{'attr':{'class' : 'checker'}}) }}
+            <div class="col-md-5">
+              {{form_label(form.idDepartamento,'Departamento')}}
+              {{ form_widget(form.idDepartamento,{'attr':{'class' : 'form-control'}}) }}
             </div>
           </div>
           <div class="form-group ">
-            <div class="col-md-4">
-              {{form_label(form.idDepartamento,'Departamento')}}
-              {{ form_widget(form.idDepartamento,{'attr':{'class' : 'form-control'}}) }}
+            <div class="col-md-5">
+              {{form_label(form.estadoCiudad,'Estado')}}
+              {{ form_widget(form.estadoCiudad,{'attr':{'class' : 'checker'}}) }}
             </div>
           </div>
         </div>
         </div>
         <div class="form-actions">
           <div class="row">
-            <div class="col-md-offset-2 col-md-9">
+            <div class="col-md-offset-4 col-md-9">
               <button type="submit" name="Create" class="btn green">Crear</button>
               <a href="{{ path('ciudad_index') }}"><button type="button" name="cancelar" class="btn default">Cancelar</button></a>
             </div>

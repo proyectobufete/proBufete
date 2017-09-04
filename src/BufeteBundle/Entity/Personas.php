@@ -40,7 +40,7 @@ class Personas
     /**
      * @var string
      */
-    private $contraseñaPersona;
+    private $contrasenaPersona;
 
     /**
      * @var integer
@@ -189,27 +189,27 @@ class Personas
     }
 
     /**
-     * Set contraseñaPersona
+     * Set contrasenaPersona
      *
-     * @param string $contraseñaPersona
+     * @param string $contrasenaPersona
      *
      * @return Personas
      */
-    public function setContraseñaPersona($contraseñaPersona)
+    public function setContrasenaPersona($contrasenaPersona)
     {
-        $this->contraseñaPersona = $contraseñaPersona;
+        $this->contrasenaPersona = $contrasenaPersona;
 
         return $this;
     }
 
     /**
-     * Get contraseñaPersona
+     * Get contrasenaPersona
      *
      * @return string
      */
-    public function getContraseñaPersona()
+    public function getContrasenaPersona()
     {
-        return $this->contraseñaPersona;
+        return $this->contrasenaPersona;
     }
 
     /**
@@ -283,5 +283,33 @@ class Personas
     {
         return $this->idBufete;
     }
-}
+    /**
+     * @var string
+     */
+    private $contraseñaPersona;
 
+
+    /**
+     * Set contraseñaPersona
+     *
+     * @param string $contraseñaPersona
+     *
+     * @return Personas
+     */
+    public function setContraseñaPersona($contraseñaPersona)
+    {
+        $this->contraseñaPersona = $contraseñaPersona;
+
+        return $this;
+    }
+
+    /**
+     * Get contraseñaPersona
+     *
+     * @return string
+     */
+    public function getContraseñaPersona()
+    {
+        return $this->contraseñaPersona;
+    }
+}
