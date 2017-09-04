@@ -1,0 +1,26 @@
+AppBundle\Entity\Tipoasuntos:
+    type: entity
+    table: tipoasuntos
+    id:
+        idTipoasunto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_TipoAsunto
+            generator:
+                strategy: IDENTITY
+    fields:
+        asunto:
+            type: string
+            nullable: false
+            length: 250
+            options:
+                fixed: false
+            column: Asunto
+        estadoAsunto:
+            type: boolean
+            nullable: false
+            column: Estado_Asunto
+    lifecycleCallbacks: {  }

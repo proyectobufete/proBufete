@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Demandados" table="demandados">
+    <id name="idDemandado" type="integer" column="Id_Demandado">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nombreDemandado" type="string" column="Nombre_Demandado" length="75" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="direccionDemandado" type="string" column="Direccion_Demandado" length="200" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="dirnotificacionDemandado" type="string" column="DirNotificacion_Demandado" length="200" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="telefonoDemandado" type="integer" column="Telefono_Demandado" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="estadoDemandado" type="boolean" column="Estado_Demandado" nullable="false"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Casos" table="casos">
+    <indexes>
+      <index name="IX_Relationship14" columns="Id_TipoAsunto"/>
+      <index name="IX_Relationship15" columns="Id_Demandante"/>
+      <index name="IX_Relationship16" columns="Id_Demandado"/>
+      <index name="IX_Relationship17" columns="Id_Estudiante"/>
+      <index name="IX_Relationship18" columns="Id_Tribunal"/>
+      <index name="IX_Relationship19" columns="Id_Persona"/>
+      <index name="IX_Relationship24" columns="Id_Tipo"/>
+    </indexes>
+    <id name="idCaso" type="integer" column="Id_Caso">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="noCaso" type="integer" column="No_Caso" nullable="true">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fechaCaso" type="datetime" column="Fecha_Caso" nullable="false"/>
+    <field name="pruebasCaso" type="text" column="Pruebas_Caso" length="65535" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="asignatarioCaso" type="integer" column="Asignatario_Caso" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="estadoCaso" type="integer" column="Estado_Caso" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <many-to-one field="idTipoasunto" target-entity="Tipoasuntos" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_TipoAsunto" referenced-column-name="Id_TipoAsunto"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idDemandante" target-entity="Demandantes" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_Demandante" referenced-column-name="Id_Demandante"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idDemandado" target-entity="Demandados" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_Demandado" referenced-column-name="Id_Demandado"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idEstudiante" target-entity="Estudiantes" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_Estudiante" referenced-column-name="Id_Estudiante"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idTribunal" target-entity="Tribunales" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_Tribunal" referenced-column-name="Id_Tribunal"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idPersona" target-entity="Personas" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_Persona" referenced-column-name="Id_Persona"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-one field="idTipo" target-entity="Tipocaso" fetch="LAZY">
+      <join-columns>
+        <join-column name="Id_Tipo" referenced-column-name="Id_Tipo"/>
+      </join-columns>
+    </many-to-one>
+  </entity>
+</doctrine-mapping>

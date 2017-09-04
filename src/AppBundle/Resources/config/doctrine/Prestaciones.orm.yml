@@ -1,0 +1,26 @@
+AppBundle\Entity\Prestaciones:
+    type: entity
+    table: prestaciones
+    id:
+        idPrestaciones:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_Prestaciones
+            generator:
+                strategy: IDENTITY
+    fields:
+        prestacion:
+            type: string
+            nullable: false
+            length: 30
+            options:
+                fixed: false
+            column: Prestacion
+        estadoPrestacion:
+            type: boolean
+            nullable: false
+            column: Estado_Prestacion
+    lifecycleCallbacks: {  }

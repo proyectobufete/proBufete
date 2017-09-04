@@ -1,0 +1,74 @@
+AppBundle\Entity\Laborales:
+    type: entity
+    table: laborales
+    indexes:
+        IX_Relationship7:
+            columns:
+                - Id_Prestaciones
+        IX_Relationship9:
+            columns:
+                - Id_Trabajo
+        IX_Relationship21:
+            columns:
+                - Id_Caso
+    id:
+        idTipolaboral:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            column: Id_TipoLaboral
+            generator:
+                strategy: IDENTITY
+    fields:
+        fechaInicio:
+            type: datetime
+            nullable: false
+            column: Fecha_Inicio
+        fechaFin:
+            type: datetime
+            nullable: false
+            column: Fecha_Fin
+        salario:
+            type: float
+            nullable: false
+            precision: 10
+            scale: 0
+            column: Salario
+        estadoLaboral:
+            type: boolean
+            nullable: false
+            column: Estado_Laboral
+    manyToOne:
+        idCaso:
+            targetEntity: Casos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Caso:
+                    referencedColumnName: Id_Caso
+            orphanRemoval: false
+        idPrestaciones:
+            targetEntity: Prestaciones
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Prestaciones:
+                    referencedColumnName: Id_Prestaciones
+            orphanRemoval: false
+        idTrabajo:
+            targetEntity: Trabajos
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                Id_Trabajo:
+                    referencedColumnName: Id_Trabajo
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
