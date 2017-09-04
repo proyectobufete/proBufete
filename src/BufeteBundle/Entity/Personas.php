@@ -40,7 +40,7 @@ class Personas
     /**
      * @var string
      */
-    private $contraseñaPersona;
+    private $contrasenaPersona;
 
     /**
      * @var integer
@@ -189,27 +189,27 @@ class Personas
     }
 
     /**
-     * Set contraseñaPersona
+     * Set contrasenaPersona
      *
-     * @param string $contraseñaPersona
+     * @param string $contrasenaPersona
      *
      * @return Personas
      */
-    public function setContraseñaPersona($contraseñaPersona)
+    public function setContrasenaPersona($contrasenaPersona)
     {
-        $this->contraseñaPersona = $contraseñaPersona;
+        $this->contrasenaPersona = $contrasenaPersona;
 
         return $this;
     }
 
     /**
-     * Get contraseñaPersona
+     * Get contrasenaPersona
      *
      * @return string
      */
-    public function getContraseñaPersona()
+    public function getContrasenaPersona()
     {
-        return $this->contraseñaPersona;
+        return $this->contrasenaPersona;
     }
 
     /**

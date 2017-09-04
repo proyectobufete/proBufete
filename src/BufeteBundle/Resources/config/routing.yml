@@ -66,3 +66,7 @@ bufete_estudiantes:
 bufete_casos:
         resource: "@BufeteBundle/Resources/config/routing/casos.yml"
         prefix:   /casos
+
+bufete_laborales:
+        resource: "@BufeteBundle/Resources/config/routing/laborales.yml"
+        prefix:   /laborales

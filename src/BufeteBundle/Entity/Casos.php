@@ -373,6 +373,6 @@ class Casos
 
     public function __toString()
     {
-        return $this->noCaso;
+        return $this->pruebasCaso;
     }
 }

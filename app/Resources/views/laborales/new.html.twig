@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Laborales creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    {{ form_start(flab) }}
+        {{ form_widget(flab) }}
+        <input type="submit" value="Create" />
+    {{ form_end(flab) }}
+
+    <ul>
+        <li>
+            <a href="{{ path('laborales_index') }}">Back to the list</a>
+        </li>
+    </ul>
+{% endblock %}

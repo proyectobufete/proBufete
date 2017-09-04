@@ -6,7 +6,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 use BufeteBundle\Entity\Casos;
+use BufeteBundle\Entity\Laborales;
 use BufeteBundle\Form\CasosType;
+use BufeteBundle\Form\LaboralesType;
 
 /**
  * Casos controller.
@@ -38,6 +40,10 @@ class CasosController extends Controller
         $caso = new Casos();
         $form = $this->createForm('BufeteBundle\Form\CasosType', $caso);
         $form->handleRequest($request);
+
+        //$laboral = new Laborales();
+        //$flab = $this->createForm('BufeteBundle\Form\LaboralesType', $laboral);
+        //$flab->handleRequest($request);
 
         $id_estudiante = null;
         $tipo_de_caso = null;
@@ -90,6 +96,7 @@ class CasosController extends Controller
               if($laborales < 1){
                 $em->persist($caso);
                 $em->flush();
+
                 return $this->redirectToRoute('casos_show', array('id' => $caso->getIdCaso()));
               } else {
                 $mensaje = "Ha llegado al limite de casos laborales";
@@ -102,6 +109,7 @@ class CasosController extends Controller
         return $this->render('casos/new.html.twig', array(
             'caso' => $caso,
             'form' => $form->createView(),
+        //    'flab' => $flab->createView(),
             'mensaje' => $mensaje
         ));
     }

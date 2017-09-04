@@ -70,3 +70,7 @@ Estudiantes:
 Casos:
     resource: "@BufeteBundle/Resources/config/routing/casos.yml"
     prefix:     /casos
+
+Laborales:
+    resource: "@BufeteBundle/Resources/config/routing/laborales.yml"
+    prefix:     /laborales
