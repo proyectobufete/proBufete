@@ -1,4 +1,4 @@
-Symfony Standard Edition
+Proyecto Grupo 15
 ========================
 
 Welcome to the Symfony Standard Edition - a fully-functional Symfony
