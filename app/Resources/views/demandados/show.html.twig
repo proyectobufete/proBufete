@@ -1,48 +1,53 @@
 {% extends 'layout.html.twig' %}
-
+{% block title %}
+  <h1>Detalles</h1>
+{% endblock %}
 {% block body %}
-    <h1>Demandados</h1>
-
-    <table>
-      <tbody>
-          <tr>
-              <th>Id demandado</th>
-              <td>{{ demandado.idDemandado }}</td>
-          </tr>
-          <tr>
-              <th>Nombre demandado</th>
-              <td>{{ demandado.nombreDemandado }}</td>
-          </tr>
-          <tr>
-              <th>Direccion demandado</th>
-              <td>{{ demandado.direccionDemandado }}</td>
-          </tr>
-          <tr>
-              <th>Dir notificacion demandado</th>
-              <td>{{ demandado.dirnotificacionDemandado }}</td>
-          </tr>
-          <tr>
-              <th>Telefono demandado</th>
-              <td>{{ demandado.telefonoDemandado }}</td>
-          </tr>
-          <tr>
-              <th>Estado demandado</th>
-              <td>{% if demandado.estadoDemandado %}Activo{% else %}No{% endif %}</td>
-          </tr>
-      </tbody>
-    </table>
-
-    <ul>
-        <li>
-            <a href="{{ path('demandados_index') }}">Regresar al Listado</a>
-        </li>
-        <li>
-            <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}">Editar</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="eliminar">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+      <div class="portlet-body">
+        <div id="sample_1_wrapper" class="dataTable_wrapper table-responsive">
+          <div class="col-md-4">
+          <table class="table table-striped table-bordered table-hover dataTable no-footer">
+              <tbody>
+                <tr>
+                    <th>Id demandado</th>
+                    <td>{{ demandado.idDemandado }}</td>
+                </tr>
+                <tr>
+                    <th>Nombre </th>
+                    <td>{{ demandado.nombreDemandado }}</td>
+                </tr>
+                <tr>
+                    <th>Direccion </th>
+                    <td>{{ demandado.direccionDemandado }}</td>
+                </tr>
+                <tr>
+                    <th>Direccion de notificación </th>
+                    <td>{{ demandado.dirnotificacionDemandado }}</td>
+                </tr>
+                <tr>
+                    <th>Teléfono</th>
+                    <td>{{ demandado.telefonoDemandado }}</td>
+                </tr>
+                <tr>
+                    <th>Estado </th>
+                    <td>{% if demandado.estadoDemandado %}Activo{% else %}No{% endif %}</td>
+                </tr>
+              </tbody>
+          </table>
+          <ul style="list-style-type:none">
+            <li>
+              <a href="{{ path('demandados_index') }}" class="btn btn-xs default">Regresar</a>
+            </li>
+            <li>
+              <a href="{{ path('demandados_edit', { 'id': demandado.idDemandado }) }}" class="btn btn-xs blue">Editar</a>
+            </li>
+            <li>
+              {{ form_start(delete_form) }}
+                  <button type="submit" class="btn btn-xs red" name="Delete">Eliminar</button>
+              {{ form_end(delete_form) }}
+            </li>
+          </ul>
+          </div>
+        </div>
+      </div>
 {% endblock %}

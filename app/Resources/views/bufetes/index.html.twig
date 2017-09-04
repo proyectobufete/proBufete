@@ -1,19 +1,32 @@
 {% extends 'layout.html.twig' %}
+{% block title %}
+  <h1>Listado de Bufetes</h1>
+{% endblock %}
 
 {% block body %}
-<div class="col-lg-8">
-    <h1>Lista Bufetes</h1>
-
-    <table class="table table-bordered">
+<div class="portlet box red-pink">
+  <div class="portlet-body">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="btn-group">
+          <a href="{{ path('bufetes_new') }}">
+											<button id="sample_editable_1_new" class="btn green">
+											Agregar Bufete <i class="fa fa-plus"></i>
+											</button></a>
+										</div>
+      </div>
+    </div>
+<div id="sample_1_wrapper" class="dataTable_wrapper table-responsive">
+    <table class="table table-striped table-bordered table-hover dataTable no-footer">
         <thead>
-            <tr class="success">
+            <tr role="row" class="">
                 <th>Id bufete</th>
-                <th>Nombre bufete</th>
+                <th>Nombre </th>
                 <th>Telefono1 </th>
                 <th>Telefono2</th>
-                <th>Email bufete</th>
-                <th>Direccion bufete</th>
-                <th>Estado bufete</th>
+                <th>Correo Electrónico</th>
+                <th>Direccion </th>
+                <th>Estado </th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -28,18 +41,15 @@
                 <td>{{ bufete.direccionBufete }}</td>
                 <td>{{ bufete.estadoBufete }}</td>
                 <td>
-                    <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}" class="btn btn-info">Ver</a>
+                    <a href="{{ path('bufetes_show', { 'id': bufete.idBufete }) }}" class="btn blue">Ver</a>
                     <a href="{{ path('bufetes_edit', { 'id': bufete.idBufete }) }}" class="btn btn-warning">Editar</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
+</div>
 
-    <ul>
-        <li>
-            <a href="{{ path('bufetes_new') }}" class="btn btn-success"><span class="glyphicon glyphicon-plus"></span> Crear nuevo Bufete</a>
-        </li>
-    </ul>
   </div>
+</div>
 {% endblock %}

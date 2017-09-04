@@ -17,9 +17,7 @@ class DemandantesType extends AbstractType
         $builder
             ->add('nombreDemandante')
             ->add('edadDemandante')
-            ->add('dpiDemandante' ,TextType::class, array("label"=>"DPI:",  "attr" =>array(
-      				"class" => "form-control",
-      			)))
+            ->add('dpiDemandante')
             ->add('cedulaDemandante')
             ->add('direccionDemandante')
             ->add('residenciaDemandante')
